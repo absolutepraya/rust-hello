@@ -68,3 +68,18 @@ Key changes:
    - `404 Not Found` for invalid paths
 
 This implementation leverages Rust's pattern matching capabilities, making the route handling code both concise and readable. The server now properly follows HTTP protocol standards by responding with appropriate status codes based on the request content.
+
+## Commit 4 Reflection
+
+In this commit, I simulated a test scenario to find the problem of single-threaded server.
+
+When running the server and accessing it with multiple browser tabs simultaneously, a critical performance bottleneck becomes apparent:
+
+1. **Single-Threaded Blocking**: The current implementation processes one request at a time. This is demonstrated by having one browser tab request the `/sleep` endpoint (which deliberately sleeps for 10 seconds), while another tab requests the root path (`/`).
+
+2. **Request Queuing**: Even though the request to the root path is simple and should be processed quickly, it gets stuck in a queue behind the long-running `/sleep` request. The second browser must wait for the first request to complete before being served.
+
+3. **Poor Scalability**: This test demonstrates how the server would perform poorly with multiple concurrent users. As the number of users increases, each would experience progressively longer wait times regardless of what they're requesting.
+
+4. **Real-World Implications**: In a production environment, this behavior would be unacceptable. A slow or complex request from one user would effectively block all other users from being served.
+
