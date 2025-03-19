@@ -1,16 +1,16 @@
 # Hello (Adv. Programming - Module 6)
 
-**Daffa Abhipraya Putra - 2306245131**
+**Daffa Abhipraya Putra - 2306245131**  
 Adv. Programming B
 
 ## Contents
 
-1. [Commit 1 Reflection](##commit-1-reflection)
-2. [Commit 2 Reflection](##commit-2-reflection)
-3. [Commit 3 Reflection](##commit-3-reflection)
-4. [Commit 4 Reflection](##commit-4-reflection)
-5. [Commit 5 Reflection](##commit-5-reflection)
-6. [Commit Bonus Reflection](##commit-bonus-reflection)
+1. [Commit 1 Reflection](#commit-1-reflection)
+2. [Commit 2 Reflection](#commit-2-reflection)
+3. [Commit 3 Reflection](#commit-3-reflection)
+4. [Commit 4 Reflection](#commit-4-reflection)
+5. [Commit 5 Reflection](#commit-5-reflection)
+6. [Commit Bonus Reflection](#commit-bonus-reflection)
 
 ## Commit 1 Reflection
 
