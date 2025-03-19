@@ -21,4 +21,22 @@ The server implementation consists of:
 
 This simple server demonstrates Rust's networking capabilities and safety features. Future work will include proper HTTP response handling and content serving.
 
-##
+## Commit 2 Reflection
+
+![Screenshot](./images/1.png)
+
+In this commit, I enhanced the server to serve actual HTML content rather than just logging requests. This represents a significant step toward creating a functional web server.
+
+1. **File System Integration**: Added the `fs` module to read HTML content from the file system.
+
+2. **HTTP Response Generation**: Implemented proper HTTP response construction with:
+
+   - Status line (`HTTP/1.1 200 OK`)
+   - Content-Length header
+   - The actual HTML content
+
+3. **Content Serving**: Created a simple HTML file (`hello.html`) to serve to clients, featuring a greeting message.
+
+4. **Complete Request-Response Cycle**: The server now completes the full HTTP cycle by not only reading requests but responding with meaningful content.
+
+This implementation demonstrates how Rust's standard library provides the tools needed for complete web server functionality without external dependencies.
