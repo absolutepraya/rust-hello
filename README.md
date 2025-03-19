@@ -1,5 +1,8 @@
 # Hello (Adv. Programming - Module 6)
 
+**Daffa Abhipraya Putra - 2306245131**
+Adv. Programming B
+
 ## Contents
 
 1. [Commit 1 Reflection](##commit-1-reflection)
@@ -27,6 +30,8 @@ This simple server demonstrates Rust's networking capabilities and safety featur
 
 In this commit, I enhanced the server to serve actual HTML content rather than just logging requests. This represents a significant step toward creating a functional web server.
 
+Key changes:
+
 1. **File System Integration**: Added the `fs` module to read HTML content from the file system.
 
 2. **HTTP Response Generation**: Implemented proper HTTP response construction with:
@@ -40,3 +45,26 @@ In this commit, I enhanced the server to serve actual HTML content rather than j
 4. **Complete Request-Response Cycle**: The server now completes the full HTTP cycle by not only reading requests but responding with meaningful content.
 
 This implementation demonstrates how Rust's standard library provides the tools needed for complete web server functionality without external dependencies.
+
+## Commit 3 Reflection
+
+![Screenshot](./images/2.png)
+
+In this commit, I implemented basic routing functionality to provide appropriate responses based on the requested URL path. This represents a significant advancement in the server's capabilities, making it behave more like a real-world web server.
+
+Key changes:
+
+1. **Request Path Validation**: Added logic to extract and validate the request path from incoming HTTP requests.
+
+2. **Conditional Response Generation**: Implemented conditional logic to:
+
+   - Serve the main `hello.html` page for requests to the root path ("/")
+   - Return a custom 404 error page for any other path
+
+3. **Error Handling**: Created a dedicated "404 Not Found" HTML page (likely named `404.html`) to provide a better user experience when clients request non-existent resources.
+
+4. **HTTP Status Codes**: Enhanced the response generation to include appropriate HTTP status codes:
+   - `200 OK` for successful requests
+   - `404 Not Found` for invalid paths
+
+This implementation leverages Rust's pattern matching capabilities, making the route handling code both concise and readable. The server now properly follows HTTP protocol standards by responding with appropriate status codes based on the request content.
