@@ -83,3 +83,23 @@ When running the server and accessing it with multiple browser tabs simultaneous
 
 4. **Real-World Implications**: In a production environment, this behavior would be unacceptable. A slow or complex request from one user would effectively block all other users from being served.
 
+## Commit 5 Reflection
+
+![Screenshot](./images/3.png)
+
+In this commit, I implemented a multi-threaded architecture using a ThreadPool to address the performance bottleneck identified in the previous commit.
+
+Key changes:
+
+1. **Added Multi-Threading**: Created a `ThreadPool` that manages a group of worker threads to handle connections in parallel.
+
+2. **Improved Responsiveness**: The server now processes multiple requests at the same time:
+
+   - Fast requests complete quickly even when slow requests are being processed
+   - Users don't have to wait for others' requests to finish
+
+3. **Better Performance**: The server can now handle more users at once without slowing down.
+
+4. **Safe Implementation**: Used Rust's thread safety features (Arc, Mutex) to prevent data races.
+
+5. **Clean Code Structure**: Separated the threading code into its own module for better organization.
