@@ -6,6 +6,11 @@ Adv. Programming B
 ## Contents
 
 1. [Commit 1 Reflection](##commit-1-reflection)
+2. [Commit 2 Reflection](##commit-2-reflection)
+3. [Commit 3 Reflection](##commit-3-reflection)
+4. [Commit 4 Reflection](##commit-4-reflection)
+5. [Commit 5 Reflection](##commit-5-reflection)
+6. [Commit Bonus Reflection](##commit-bonus-reflection)
 
 ## Commit 1 Reflection
 
@@ -103,3 +108,29 @@ Key changes:
 4. **Safe Implementation**: Used Rust's thread safety features (Arc, Mutex) to prevent data races.
 
 5. **Clean Code Structure**: Separated the threading code into its own module for better organization.
+
+## Commit Bonus Reflection
+
+In this bonus commit, I enhanced the ThreadPool implementation by adding a more robust construction method, following Rust's best practices for error handling.
+
+Key changes:
+
+1. **Added Error-Handling Constructor**: Created a `build` function that returns a `Result` instead of panicking:
+
+   ```rust
+   pub fn build(size: usize) -> Result<ThreadPool, String> {
+       if size == 0 {
+           return Err(String::from("ThreadPool size must be greater than 0"));
+       }
+       // Create and return the ThreadPool
+   }
+   ```
+
+2. **Better Error Management**: Users can now handle errors gracefully without crashes.
+
+3. **Dual Construction Methods**: Kept both:
+
+   - `new`: Panics on invalid input (standard Rust convention)
+   - `build`: Returns Result for flexible error handling
+
+4. **Improved Documentation**: Added clear function descriptions, parameter explanations, and error documentation.
